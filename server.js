@@ -12,7 +12,12 @@ const swaggerSpec = require("./config/swagger");
 const app = express();
 
 app.use(helmet());
-app.use(cors({ origin: corsOrigin }));
+app.use(
+  cors({
+    origin: "https://devwithsunil.vercel.app",
+    credentials: true,
+  }),
+);
 app.use(rateLimiter);
 app.use(express.json({ limit: "10kb" }));
 app.use(express.urlencoded({ extended: true }));
