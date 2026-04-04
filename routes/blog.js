@@ -5,7 +5,8 @@ const { requireAuth, requireRole } = require("../middleware/auth");
 
 const router = express.Router();
 
-router.get("/posts", blogController.listPosts);
+router.get("/posts", blogController.getPosts);
+router.get("/posts/:slug", blogController.getPostBySlug);
 
 router.post(
   "/posts",

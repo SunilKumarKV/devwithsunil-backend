@@ -9,12 +9,15 @@ const logger = require("./utils/logger");
 const swaggerUi = require("swagger-ui-express");
 const swaggerSpec = require("./config/swagger");
 
+// Validate environment variables
+require("./config/environment");
+
 const app = express();
 
 app.use(helmet());
 app.use(
   cors({
-    origin: "https://devwithsunil.vercel.app",
+    origin: process.env.FRONTEND_URL || "https://devwithsunil.vercel.app",
     credentials: true,
   }),
 );

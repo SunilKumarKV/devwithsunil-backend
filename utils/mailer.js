@@ -35,3 +35,15 @@ exports.sendContactNotification = async ({ name, email, message }) => {
 
   return transporter.sendMail(mailOptions);
 };
+
+exports.sendNewsletterWelcome = async (email) => {
+  const mailOptions = {
+    from: `DevWithSunil <${EMAIL_USER}>`,
+    to: email,
+    subject: "Welcome to DevWithSunil Newsletter!",
+    text: `Thank you for subscribing to the DevWithSunil newsletter!\n\nYou'll receive updates on the latest blog posts, tutorials, and tech insights.\n\nBest regards,\nSunil Kumar`,
+    html: `<h2>Welcome to DevWithSunil Newsletter!</h2><p>Thank you for subscribing!</p><p>You'll receive updates on the latest blog posts, tutorials, and tech insights.</p><p>Best regards,<br>Sunil Kumar</p>`,
+  };
+
+  return transporter.sendMail(mailOptions);
+};

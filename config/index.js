@@ -6,22 +6,8 @@ if (envResult.error && process.env.NODE_ENV !== "production") {
   console.warn(".env file not found, relying on environment variables only.");
 }
 
-// Validate critical production environment variables
-if (process.env.NODE_ENV === "production") {
-  const requiredVars = [
-    "JWT_SECRET",
-    "DB_HOST",
-    "DB_USER",
-    "DB_PASSWORD",
-    "DB_DATABASE",
-  ];
-  const missing = requiredVars.filter((v) => !process.env[v]);
-  if (missing.length > 0) {
-    throw new Error(
-      `Missing critical environment variables in production: ${missing.join(", ")}`,
-    );
-  }
-}
+// Environment validation is now handled in config/environment.js
+// This file is required at server startup
 
 module.exports = {
   port: process.env.PORT || 5000,
