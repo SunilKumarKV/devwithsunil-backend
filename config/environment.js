@@ -31,5 +31,5 @@ module.exports = {
   DATABASE_URL: process.env.DATABASE_URL,
   EMAIL_USER: process.env.EMAIL_USER,
   EMAIL_PASS: process.env.EMAIL_PASS,
-  FRONTEND_URL: process.env.FRONTEND_URL || "http://localhost:3000",
+  FRONTEND_URL: process.env.FRONTEND_URL || "https://devwithsunil.vercel.app",
 };

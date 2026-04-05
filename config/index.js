@@ -15,5 +15,5 @@ module.exports = {
   jwtSecret: process.env.JWT_SECRET || "devwithsunil-secret-unsafe-default",
   jwtExpiration: process.env.JWT_EXPIRATION || "4h",
   appName: process.env.APP_NAME || "DevWithSunil",
-  corsOrigin: process.env.CORS_ORIGIN || "http://localhost:3000",
+  corsOrigin: process.env.CORS_ORIGIN || "https://devwithsunil.vercel.app",
 };
